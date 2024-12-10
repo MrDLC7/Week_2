@@ -24,13 +24,13 @@ namespace day_2_task_1
                     switch(choice)
                     {
                         case "1":
-                            ShowProducts(context);
+                            ShowProducts(context);      // Показати список товарів
                             break;
                         case "2":
-                            AddProduct(context);
+                            AddProduct(context);        // Додати товар
                             break;
                         case "3":
-                            return;
+                            return;                     // Вийти з програми
                         default:
                             WriteLine_SetTextColor("Неправильний вибір. Спробуйте знову.", ConsoleColor.Red);
                             break;
@@ -53,7 +53,7 @@ namespace day_2_task_1
                     Console.WriteLine(
                         $"ID: {product.Id, -5} " +
                         $"Назва: {product.Name, -15} " +
-                        $"Ціна: {product.Price, -15} грн");
+                        $"Ціна: {product.Price, -15:C} грн");
                 }
             }
             else
@@ -62,6 +62,7 @@ namespace day_2_task_1
             }
         }
 
+        // Додавання товару
         static void AddProduct(Context context)
         {
             Console.WriteLine("\nВведіть назву товару");
