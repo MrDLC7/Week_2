@@ -6,7 +6,7 @@ namespace day_2_task_1
     {
         public DbSet<Product> Products { get; set; }            // Взаємодія з таблицею
 
-        // Підключення до бази даних shopdb
+        // Підключення до бази даних shopsdb
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
