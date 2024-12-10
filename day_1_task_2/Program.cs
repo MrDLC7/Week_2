@@ -21,11 +21,17 @@ class Program
                 Console.WriteLine("Успішне підключення до бази даних MySQL");
 
                 // Запит SQL
-                string query = "SELECT * FROM products; --";
+                string query =
+                    "SELECT * " +
+                    "FROM clients " +
+                    "WHERE FirstName = @Name";
 
                 // Створення команди
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    // Додавання параметра
+                    command.Parameters.AddWithValue("@Name", "Jane");
+
                     // Виконання запиту і отримання даних
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
@@ -33,10 +39,10 @@ class Program
                         {
                             Console.WriteLine
                                 (
-                                $"ID: {reader["Id"], -5}" +
-                                $"Name: {reader["Name"], -15}" +
-                                $"Price: {reader["Price"], -15}" +
-                                $"CategoryID: {reader["CategoryID"], -5}"
+                                $"ID: {reader["Id"],-5}" +
+                                $"FirstName: {reader["FirstName"], -15}" +
+                                $"LastName: {reader["LastName"], -15}" +
+                                $"Email: {reader["Email"], -40}"
                                 );
                         }
                     }
