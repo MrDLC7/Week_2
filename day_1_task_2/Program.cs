@@ -20,11 +20,14 @@ class Program
                 connection.Open();
                 Console.WriteLine("Успішне підключення до бази даних MySQL");
 
+                // SQL-ін'єкція
+                string userInput = "Jane'; USE employeesdb; DROP TABLE IF EXISTS employees; -- '";
+
                 // Запит SQL
-                string query = 
+                string query =
                     "SELECT * " +
                     "FROM clients " +
-                    "WHERE FirstName = @Name; --";
+                    "WHERE FirstName = '" + userInput + "'";
 
                 // Створення команди
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -47,6 +50,7 @@ class Program
                         }
                     }
                 }
+
             }
             catch (Exception ex)
             {
