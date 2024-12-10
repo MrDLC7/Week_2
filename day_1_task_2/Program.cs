@@ -32,9 +32,6 @@ class Program
                 // Створення команди
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    // Додавання параметра
-                    command.Parameters.AddWithValue("@Name", "John");
-
                     // Виконання запиту і отримання даних
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
@@ -50,7 +47,6 @@ class Program
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {
