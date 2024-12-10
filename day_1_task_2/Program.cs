@@ -20,20 +20,17 @@ class Program
                 connection.Open();
                 Console.WriteLine("Успішне підключення до бази даних MySQL");
 
-                // SQL-ін'єкція
-                string userInput = "Jane'; USE employeesdb; DROP TABLE IF EXISTS employees; -- '";
-
                 // Запит SQL
                 string query =
                     "SELECT * " +
                     "FROM clients " +
-                    "WHERE FirstName = '" + userInput + "'";
+                    "WHERE FirstName = @Name";
 
                 // Створення команди
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Додавання параметра
-                    command.Parameters.AddWithValue("@Name", "John");
+                    command.Parameters.AddWithValue("@Name", "Jane");
 
                     // Виконання запиту і отримання даних
                     using (MySqlDataReader reader = command.ExecuteReader())
