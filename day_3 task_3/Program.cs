@@ -15,10 +15,10 @@ namespace day_3_task_3
                 {
                     Console.WriteLine(
                         "\nОберіть дію:\n" +
-                        "1. Операція Create\n" +
-                        "2. Операція Read\n" +
-                        "3. Операція Update\n" +
-                        "4. Операція Delete\n" +
+                        "1. Операція Create \t(Додати запис)\n" +
+                        "2. Операція Read \t(Читати записи)\n" +
+                        "3. Операція Update \t(Оновити запис)\n" +
+                        "4. Операція Delete \t(Видалити запис)\n" +
                         "5. Вийти\n");
                     Console.Write("Ваш вибір: ");
 
@@ -27,25 +27,30 @@ namespace day_3_task_3
                     switch(choice)
                     {
                         case "1":
-                            WriteLine_SetTextColor("\nДодавання запису в базу даних (операція Create)", ConsoleColor.DarkBlue);
+                            WriteLine_SetTextColor("\nДодавання запису в базу даних (операція Create)", 
+                                ConsoleColor.DarkBlue);
                             CreateProducts(context);        // Додати товар
                             break;
                         case "2":
-                            WriteLine_SetTextColor("\nЧитання записів з бази даних (операція Read)", ConsoleColor.DarkBlue);
+                            WriteLine_SetTextColor("\nЧитання записів з бази даних (операція Read)", 
+                                ConsoleColor.DarkBlue);
                             ReadProducts(context);          // Показати список товарів
                             break;
                         case "3":
-                            WriteLine_SetTextColor("\nОновлення запису в базі даних (операція Update)", ConsoleColor.DarkBlue);
+                            WriteLine_SetTextColor("\nОновлення запису в базі даних (операція Update)", 
+                                ConsoleColor.DarkBlue);
                             UpdateProducts(context);        // Оновити ціну товару
                             break;
                         case "4":
-                            WriteLine_SetTextColor("\nВидалення запису із бази даних (операція Delete)", ConsoleColor.DarkBlue);
+                            WriteLine_SetTextColor("\nВидалення запису із бази даних (операція Delete)", 
+                                ConsoleColor.DarkBlue);
                             DeleteProducts(context);        // Видалити товар
                             break;
                         case "5":
                             return;                         // Вийти з програми
                         default:
-                            WriteLine_SetTextColor("Неправильний вибір. Спробуйте знову.", ConsoleColor.Red);
+                            WriteLine_SetTextColor("Неправильний вибір. Спробуйте знову.", 
+                                ConsoleColor.Red);
                             break;
                     }
                 }
