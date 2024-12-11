@@ -27,22 +27,22 @@ namespace day_3_task_3
                     switch(choice)
                     {
                         case "1":
-                            WriteLine_SetTextColor("\nДодавання запису в базу даних (операція Create)", 
+                            WriteLine_SetTextColor("\nДодавання запису в базу даних (Операція Create)", 
                                 ConsoleColor.DarkBlue);
                             CreateProducts(context);        // Додати товар
                             break;
                         case "2":
-                            WriteLine_SetTextColor("\nЧитання записів з бази даних (операція Read)", 
+                            WriteLine_SetTextColor("\nЧитання записів з бази даних (Операція Read)", 
                                 ConsoleColor.DarkBlue);
                             ReadProducts(context);          // Показати список товарів
                             break;
                         case "3":
-                            WriteLine_SetTextColor("\nОновлення запису в базі даних (операція Update)", 
+                            WriteLine_SetTextColor("\nОновлення запису в базі даних (Операція Update)", 
                                 ConsoleColor.DarkBlue);
                             UpdateProducts(context);        // Оновити ціну товару
                             break;
                         case "4":
-                            WriteLine_SetTextColor("\nВидалення запису із бази даних (операція Delete)", 
+                            WriteLine_SetTextColor("\nВидалення запису із бази даних (Операція Delete)", 
                                 ConsoleColor.DarkBlue);
                             DeleteProducts(context);        // Видалити товар
                             break;
